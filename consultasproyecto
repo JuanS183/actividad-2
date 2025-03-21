@@ -1,0 +1,27 @@
+
+  
+ 
+  SELECT * FROM habitos WHERE id_usuario = 1;  
+  
+
+--Obtener todas las actividades de un proyecto específico
+  
+ 
+  SELECT * FROM actividades WHERE id_proyecto = 1;  
+  
+  
+
+--Listar usuarios y sus actividades
+  
+
+  SELECT u.nombre, a.descripcion
+  FROM usuarios u
+  JOIN actividades a ON u.id_usuario = a.id_usuario;
+  
+
+--Obtener la cantidad de proyectos asociados a cada usuario
+  
+
+  SELECT id_usuario, COUNT(*) AS total_proyectos
+  FROM proyectos 
+  GROUP BY id_usuario;
